@@ -51,3 +51,10 @@ Given the class imbalance in the data (~83% no-churn, ~17% churn), we prioritize
 - **SVM:** Linear, polynomial, and radial kernels tuned via 8-fold CV; radial kernel also tested with class weighting (1:2, 1:3, 1:5, 1:10) to address imbalance
 - **Decision Trees:** Single tree grown then pruned via cost-complexity pruning with the 1-SE rule
 - **Bagging / Random Forest:** `randomForest` with `mtry = p` (bagging) vs. `mtry = floor(sqrt(p))` (random forest); random forest additionally tuned over `mtry` and `nodesize` via OOB error grid search
+
+## My Contributions
+- **Introduction / Abstract / Interpretations** — co-wrote the project introduction and abstract, and contributed to interpreting results across models
+- **Literature Review** — researched and summarized prior work on churn prediction methods (e.g., Prabadevi et al. 2023, The Pecan Team 2026) to motivate our choice of models
+- **SVM model** — implemented and tuned support vector machines across linear, polynomial, and radial kernels (via 8-fold cross-validation), including a weighted radial variant to address class imbalance; evaluated each kernel on test error, sensitivity, and specificity, and identified the polynomial kernel as the best choice from a business perspective due to its high sensitivity in catching at-risk customers
+
+Full code for this section is in **Appendix C** of the report.
